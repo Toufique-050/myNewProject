@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><p>Author -- Toufique</p></title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="container my-4">
+    <h1 class="text-center mb-4">Product Details with Calculations</h1>
+    <div class="row">
+      <!-- Form for entering product details -->
+      <div class="col-lg-6 mb-4">
+        <form id="productForm" class="p-4 shadow-lg rounded bg-light">
+          <h3 class="text-center text-primary mb-4">Add Product Details</h3>
+          <div class="mb-3">
+            <label for="productSelect" class="form-label">Select Product</label>
+            <select id="productSelect" class="form-select">
+              <option value="">Choose a product...</option>
+              <option value="Laptop">Laptop</option>
+              <option value="Mobile Phone">Mobile Phone</option>
+              <option value="Headphones">Headphones</option>
+              <option value="Keyboard">Keyboard</option>
+              <option value="Monitor">Monitor</option>
+              <option value="Tablet">Tablet</option>
+              <option value="Printer">Printer</option>
+              <option value="Smartwatch">Smartwatch</option>
+              <option value="External Hard Drive">External Hard Drive</option>
+              <option value="Camera">Camera</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label for="productQuantity" class="form-label">Quantity</label>
+            <input type="number" id="productQuantity" class="form-control" placeholder="Enter Quantity" />
+            <div id="quantityError" style="color: red; display: none;">Quantity exceeds limit!</div>
+
+          </div>
+
+          <div class="mb-3">
+            <label for="productPrice" class="form-label">Price (per unit)</label>
+            <input type="number" id="productPrice" class="form-control" placeholder="Enter Price">
+          </div>
+          <div class="mb-3">
+            <label for="discount" class="form-label">Discount (%)</label>
+            <input type="number" id="discount" class="form-control" placeholder="Enter Discount (if any)">
+          </div>
+          <div class="mb-3">
+            <label for="tax" class="form-label">Tax (%)</label>
+            <input type="number" id="tax" class="form-control" placeholder="Enter Tax (if any)">
+          </div>
+          <div class="text-center">
+            <button type="submit" class="btn btn-primary w-100">Add Product</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Table for displaying product details -->
+      <div class="col-lg-6">
+        <div class="p-4 shadow-lg rounded bg-light">
+          <h3 class="text-center text-primary mb-4">Product List</h3>
+          <div class="table-responsive">
+            <table class="table table-bordered border-0 table-striped table-hover text-center">
+              <thead class="table-primary">
+                <tr>
+                  <th>S.No</th>
+                  <th>Product Name</th>
+                  <th>Quantity</th>
+                  <th>Price (per unit)</th>
+                  <th>Discount</th>
+                  <th>Tax</th>
+                  <th>Total Cost</th>
+                  <th>Final Cost</th>
+                  <th>Date and Time</th>
+                  <th>Remove Record</th>
+                </tr>
+              </thead>
+              <tbody id="productTable" class="border-primary-subtle"></tbody>
+              <tfoot>
+                <tr class="table-secondary">
+                  <td colspan="6"><strong>Grand Total:</strong></td>
+                  <td id="grandTotal" colspan="4">0.00</td>
+
+                </tr>
+              </tfoot>
+
+            </table>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal for empty fields -->
+  <div class="modal fade" id="emptyFieldModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalLabel">Form Error</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          Please fill out all fields before submitting the form.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="./script.js"></script>
+
+  
+</body>
+
+</html>
+
+
